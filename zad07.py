@@ -19,7 +19,23 @@ def _max(m:list[tuple[int,str]]) -> int:
         if tup[0] > _maximum:  # noqa: PLR1730
             _maximum = tup[0]
     return(int(_maximum))
+def mean(m:list[tuple[int,str]]):
+    
+    _sum = 0
 
-print(f"Minimum is: {_min(measurements)}")
-print(f"Maximum is: {_max(measurements)}")
+    for tup in m:
+        _sum += tup[0]
+
+    _mean: float = _sum / len(m)
+
+    return(_mean)
+
+
+print(f"Minimum is: {_min(m=measurements)}")
+print(f"Maximum is: {_max(m=measurements)}")
+print(f"Mean is: {mean(m=measurements)}")
+
+descending_sort: list[tuple[int, str]] = sorted(measurements, key=lambda meas: meas[0], reverse=True)
+
+print(descending_sort)
 
