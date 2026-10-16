@@ -54,10 +54,6 @@ def transpose(m:list[list[int]]) -> list[list[int]]:
 
     for _ in range(cols):
         t_m.append([])
-   
-    
-
-
     for i in range(cols):
         for j in range(rows):
             t_m[i].append(m[j][i])
