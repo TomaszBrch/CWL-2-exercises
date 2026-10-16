@@ -60,4 +60,7 @@ def transpose(m:list[list[int]]) -> list[list[int]]:
 
     return(t_m)
 
+print(f"Row sums: {row_sums(m)}")
+print(f"Column sums: {column_sums(m)}")
+print(f"Max: {maxiumum(m)}")
 print_matrix(transpose(m))
