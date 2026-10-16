@@ -1,12 +1,9 @@
-
-from typing import Any
-
 m: list[list[int]] =    [[1,2,3,4],
                         [5,6,7,8],
                         [9,10,11,12]]
 def print_matrix(m:list[list[int]]) -> None:
     for row in m:
-        print("\n")
+        print(" ")
         for num in row:
             print(num, end=" ")
 
@@ -57,15 +54,14 @@ def transpose(m:list[list[int]]) -> list[list[int]]:
 
     for _ in range(cols):
         t_m.append([])
+   
+    
 
 
     for i in range(cols):
         for j in range(rows):
-            pass
-        
+            t_m[i].append(m[j][i])
 
+    return(t_m)
 
-
-
-
-
+print_matrix(transpose(m))
