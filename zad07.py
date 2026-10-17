@@ -1,9 +1,11 @@
 measurements:list[tuple[int,str]] = [
-(10, "temperatura w poniedzialek"),
-(12, "temperatura we wtorek"),
-(17, "temperatura w srode"),
-(14, "temperatura w czwartek"),
-(13, "temperatura w piatek")]
+(9, "temperatura w poniedzialek"),
+(10, "temperatura we wtorek"),
+(13, "temperatura w srode"),
+(12, "temperatura w czwartek"),
+(10, "temperatura w piatek"),
+(7, "temperatura w sobote"),
+(8,"temperatura w niedziele")]
 
 def _min(m:list[tuple[int,str]]) -> int:
     _minimum: float = float("inf")
@@ -19,7 +21,7 @@ def _max(m:list[tuple[int,str]]) -> int:
         if tup[0] > _maximum:  # noqa: PLR1730
             _maximum = tup[0]
     return(int(_maximum))
-def mean(m:list[tuple[int,str]]):
+def mean(m:list[tuple[int,str]])->float:
     
     _sum = 0
 
@@ -37,5 +39,12 @@ print(f"Mean is: {mean(m=measurements)}")
 
 descending_sort: list[tuple[int, str]] = sorted(measurements, key=lambda meas: meas[0], reverse=True)
 
-print(descending_sort)
 
+_avg: float = mean(measurements)
+
+
+
+above_average_sort: list[tuple[int, str]] = sorted([m for m in measurements if m[0] > _avg],
+key=lambda x:x[0])
+
+print(above_average_sort)
