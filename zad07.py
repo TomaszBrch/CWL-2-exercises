@@ -42,7 +42,12 @@ descending_sort: list[tuple[int, str]] = sorted(measurements, key=lambda meas: m
 
 _avg: float = mean(measurements)
 
+"""
+Above the average sort sorts the measurement tuples in ascending order only for the tuples where the temperature value is greater than the average of all temperatures from the list
 
+This sort method is better for comparing measurements with higher temperature
+
+"""
 
 above_average_sort: list[tuple[int, str]] = sorted([m for m in measurements if m[0] > _avg],
 key=lambda x:x[0])
